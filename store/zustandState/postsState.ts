@@ -29,4 +29,8 @@ const { setPosts } = getPostState();
   const resp = await fetch("https://jsonplaceholder.typicode.com/posts");
   // setPostState({ posts: await resp.json() });
   setPosts(await resp.json());
+  setPostState((state) => ({
+    ...state,
+    posts: [{ id: 101, body: "hop", title: "hobbalaxdxdxd", userId: 101 }, ...state.posts],
+  }));
 })();
