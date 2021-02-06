@@ -1,6 +1,6 @@
 import { NextPage } from "next";
 import React from "react";
-import { postState, setPostState } from "./PostState";
+import { postState, setPostState } from "../zustandState/PostState";
 
 (async () => {
   const resp = await fetch("https://jsonplaceholder.typicode.com/posts");
