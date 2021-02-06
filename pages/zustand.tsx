@@ -1,9 +1,10 @@
 import { NextPage } from "next";
-import React from "react";
-import { postState, setPostState } from "../zustandState/PostState";
+import React, { useEffect } from "react";
+import { getPostState, postState, setPostState } from "../zustandState/PostState";
 
 const Zustand: NextPage = () => {
   const posts = postState((state) => state.posts);
+  useEffect(() => console.log("hoppala"), [posts]);
 
   return (
     <div>
