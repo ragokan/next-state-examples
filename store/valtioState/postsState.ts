@@ -1,4 +1,5 @@
-import { proxy } from "valtio";
+import { proxy, subscribe } from "valtio";
+import { devtools } from "valtio/utils";
 
 interface IPost {
   userId: number;
@@ -19,4 +20,10 @@ export const postState = proxy<IPostState>({ posts: [] });
   postState.posts = posts;
 })();
 
+devtools(postState, "Posts State");
+
 export const filterPosts = () => (postState.posts = postState.posts.filter((item, index) => index !== 0));
+
+subscribe(postState, () => {
+  console.log("Change Happened!");
+});

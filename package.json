@@ -10,7 +10,6 @@
   },
   "dependencies": {
     "@reduxjs/toolkit": "^1.5.0",
-    "@rematch/core": "^2.0.0",
     "@types/react-redux": "^7.1.16",
     "mobx": "^6.1.5",
     "mobx-react": "^7.1.0",
