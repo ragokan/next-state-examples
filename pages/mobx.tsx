@@ -1,7 +1,7 @@
 import { observer } from "mobx-react";
 import { NextPage } from "next";
 import React, { useEffect } from "react";
-import { postState } from "../mobxState/postsState";
+import { postState } from "../store/mobxState/postsState";
 
 const Mobx: NextPage = () => {
   useEffect(() => console.log("hoppala"), [postState.posts]);

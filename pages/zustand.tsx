@@ -1,6 +1,6 @@
 import { NextPage } from "next";
 import React, { useEffect } from "react";
-import { postState, setPostState } from "../zustandState/postsState";
+import { postState, setPostState } from "../store/zustandState/postsState";
 
 const Zustand: NextPage = () => {
   const posts = postState((state) => state.posts);

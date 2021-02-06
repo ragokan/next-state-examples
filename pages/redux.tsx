@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
-import { filterPosts } from "../reduxState/postsState";
-import { useAppDispatch, useAppSelector } from "../reduxState/store";
+import { filterPosts } from "../store/reduxState/postsState";
+import { useAppDispatch, useAppSelector } from "../store/reduxState/store";
 
 const redux: React.FC = () => {
   const { posts } = useAppSelector();

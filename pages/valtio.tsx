@@ -1,7 +1,7 @@
 import { NextPage } from "next";
 import React, { useEffect } from "react";
 import { useProxy } from "valtio";
-import { filterPosts, postState } from "../valtioState/postsState";
+import { filterPosts, postState } from "../store/valtioState/postsState";
 
 const Valtio: NextPage = () => {
   const { posts } = useProxy(postState);
