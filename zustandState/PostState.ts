@@ -20,4 +20,8 @@ export const postState = create<IPostState>(
 
 export const setPostState = (partial: PartialState<IPostState>) => postState.setState(partial);
 export const getPostState = postState.getState;
-export const subPostState = postState.subscribe;
+
+(async () => {
+  const resp = await fetch("https://jsonplaceholder.typicode.com/posts");
+  setPostState({ posts: await resp.json() });
+})();

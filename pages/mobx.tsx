@@ -5,12 +5,12 @@ import { postState } from "../mobxState/postsState";
 
 const Mobx: NextPage = () => {
   return (
-    <>
+    <div>
       <button onClick={() => postState.filterPosts()}>Filter</button>
       {postState.posts.map((post) => (
         <div key={post.id}>{post.title}</div>
       ))}
-    </>
+    </div>
   );
 };
 

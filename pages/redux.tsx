@@ -1,12 +1,6 @@
 import React from "react";
-import { fetchPosts, filterPosts } from "../reduxState/postsState";
-import store, { useAppDispatch, useAppSelector } from "../reduxState/store";
-
-(async () => {
-  const resp = await fetch("https://jsonplaceholder.typicode.com/posts");
-  const posts = await resp.json();
-  store.dispatch(fetchPosts(posts));
-})();
+import { filterPosts } from "../reduxState/postsState";
+import { useAppDispatch, useAppSelector } from "../reduxState/store";
 
 const redux: React.FC = () => {
   const { posts } = useAppSelector();

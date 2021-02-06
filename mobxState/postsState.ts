@@ -1,4 +1,4 @@
-import { makeAutoObservable } from "mobx";
+import { action, makeObservable, observable, observe } from "mobx";
 
 interface IPost {
   userId: number;
@@ -11,7 +11,11 @@ class PostState {
   posts: IPost[] = [];
 
   constructor() {
-    makeAutoObservable(this);
+    makeObservable(this, {
+      posts: observable,
+      setPosts: action,
+      filterPosts: action,
+    });
   }
 
   setPosts(newPosts: IPost[]) {
@@ -22,7 +26,6 @@ class PostState {
     this.posts = this.posts.filter((item, index) => index !== 0);
   }
 }
-
 const postState = new PostState();
 
 (async () => {

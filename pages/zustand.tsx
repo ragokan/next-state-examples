@@ -2,11 +2,6 @@ import { NextPage } from "next";
 import React from "react";
 import { postState, setPostState } from "../zustandState/PostState";
 
-(async () => {
-  const resp = await fetch("https://jsonplaceholder.typicode.com/posts");
-  setPostState({ posts: await resp.json() });
-})();
-
 const Zustand: NextPage = () => {
   const posts = postState((state) => state.posts);
 
