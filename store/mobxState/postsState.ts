@@ -1,4 +1,4 @@
-import { action, makeObservable, observable, observe } from "mobx";
+import { action, makeObservable, observable } from "mobx";
 
 interface IPost {
   userId: number;
