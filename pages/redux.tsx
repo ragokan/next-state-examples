@@ -1,9 +1,9 @@
 import React, { useEffect } from "react";
 import { filterPosts } from "../store/reduxState/postsState";
-import { useAppDispatch, useAppSelector } from "../store/reduxState/store";
+import { useAppDispatch, useAppState } from "../store/reduxState/store";
 
 const redux: React.FC = () => {
-  const { posts } = useAppSelector();
+  const { posts } = useAppState();
   const dispatch = useAppDispatch();
 
   useEffect(() => console.log("hoppala"), [posts]);
