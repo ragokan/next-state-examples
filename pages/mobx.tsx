@@ -7,10 +7,16 @@ const Mobx: NextPage = () => {
   useEffect(() => console.log("hoppala"), [postState.posts]);
   return (
     <div>
-      <button onClick={() => postState.filterPosts()}>Filter</button>
-      {postState.posts.map((post) => (
-        <div key={post.id}>{post.title}</div>
-      ))}
+      <button className="btn btn-primary mb-3" type="button" onClick={() => postState.filterPosts()}>
+        Filter
+      </button>
+      <ul className="list-group">
+        {postState.posts.map((post) => (
+          <li className="list-group-item" key={post.id}>
+            {post.title}
+          </li>
+        ))}
+      </ul>
     </div>
   );
 };

@@ -9,10 +9,16 @@ const Valtio: NextPage = () => {
 
   return (
     <div>
-      <button onClick={() => filterPosts()}>Filter</button>
-      {posts.map((post) => (
-        <div key={post.id}>{post.title}</div>
-      ))}
+      <button className="btn btn-primary mb-3" type="button" onClick={() => filterPosts()}>
+        Filter
+      </button>
+      <ul className="list-group">
+        {posts.map((post) => (
+          <li className="list-group-item" key={post.id}>
+            {post.title}
+          </li>
+        ))}
+      </ul>
     </div>
   );
 };

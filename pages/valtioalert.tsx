@@ -7,10 +7,16 @@ const ValtioAlert: NextPage = () => {
   const { alerts } = useProxy(alertState);
   return (
     <div>
-      <button onClick={addAlert}>Add Alert</button>
-      {alerts.map((alert) => (
-        <p key={alert.id}>{alert.text}</p>
-      ))}
+      <button className="btn btn-primary mb-3" type="button" onClick={addAlert}>
+        Add Alert
+      </button>
+      <ul className="list-group">
+        {alerts.map((alert) => (
+          <li className="list-group-item" key={alert.id}>
+            {alert.text}
+          </li>
+        ))}
+      </ul>
     </div>
   );
 };

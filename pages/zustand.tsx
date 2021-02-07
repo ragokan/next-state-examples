@@ -8,10 +8,20 @@ const Zustand: NextPage = () => {
 
   return (
     <div>
-      <button onClick={() => setPostState({ posts: posts.filter((item, index) => index !== 0) })}>Smt</button>
-      {posts.map((post: any) => (
-        <p key={post.id}>{post.title}</p>
-      ))}
+      <button
+        className="btn btn-primary"
+        type="button"
+        onClick={() => setPostState({ posts: posts.filter((item, index) => index !== 0) })}
+      >
+        Smt
+      </button>
+      <ul className="list-group">
+        {posts.map((post: any) => (
+          <li className="list-group-item" key={post.id}>
+            {post.title}
+          </li>
+        ))}
+      </ul>
     </div>
   );
 };
